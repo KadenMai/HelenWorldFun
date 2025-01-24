@@ -31,6 +31,71 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- RESPONSIVE CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">    
+
+    <style>
+        body {
+          text-align: center;
+        }
+        input[type="number"] {
+          padding: 8px;
+          font-size: 16px;
+          width: 150px;
+          margin: 10px 0;
+        }
+        button {
+          padding: 10px 20px;
+          font-size: 16px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #45a049;
+        }
+        #result {
+          margin-top: 20px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function getVietnameseZodiac() {
+          // Get the birth year from the input field
+          const birthYear = document.getElementById("birthYear").value;
+    
+          // Validate the input
+          if (!birthYear || isNaN(birthYear) || birthYear.trim() === "" || birthYear <= 0) {
+            document.getElementById("result").innerText = "Please enter a valid birth year.";
+            return;
+          }
+    
+          // Vietnamese zodiac animals
+          const zodiacAnimals = [
+            "Tý (Rat)", 
+            "Sửu (Ox)", 
+            "Dần (Tiger)", 
+            "Mão (Cat)", 
+            "Thìn (Dragon)", 
+            "Tỵ (Snake)", 
+            "Ngọ (Horse)", 
+            "Mùi (Goat)", 
+            "Thân (Monkey)", 
+            "Dậu (Rooster)", 
+            "Tuất (Dog)", 
+            "Hợi (Pig)"
+          ];
+    
+          // Calculate the zodiac animal
+          const index = (birthYear - 4) % 12;
+          const animal = zodiacAnimals[index];
+    
+          // Display the result
+          document.getElementById("result").innerText = `Your Vietnamese Zodiac Animal is: ${animal}`;
+        }
+    </script>
 </head>
 
 <body>
@@ -127,30 +192,32 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="section-title">
-                        <h2>My recent works.</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                        <h2>The Vietnam Zodiac.</h2>
+                        <p>There are 12 animals in the zodiac each repesenting a year, on this page you can find out what animal you are a see how you are like.</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <ul class="work">
-                    <li class="filter" data-filter="all">all</li>
-                    <li class="filter" data-filter=".webdesign">webdesign</li>
-                    <li class="filter" data-filter=".development">development</li>
-                    <li class="filter" data-filter=".photography">photography</li>
-                </ul>
+            <div class="container">
+                <div class="row">
+                    <h1>Find Your Vietnamese Zodiac Animal</h1>
+                    <p>Enter your birth year below:</p>
+                    <input type="number" id="birthYear" placeholder="Enter year (e.g., 1990)" />
+                    <button onclick="getVietnameseZodiac()">Find My Animal</button>
+                    <p id="result"></p>
+                </div>
             </div>
+
             <div class="work-inner">
                 <div class="row work-posts grid">
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 mix webdesign">
                         <div class="item">
-                            <a href="assets/images/work/1.jpg" class="work-popup">
+                            <a href="#rat">
                                 <figure class="effect-bubba">
-                                    <img src="assets/images/work/1.jpg" alt="image">
+                                    <img src="assets/images/zodiac/Rat.webp" alt="image">
                                     <figcaption>
-                                        <h2>Web development</h2>
-                                        <p><strong>Client:</strong> Jonathon doe</p>
+                                        <h2>Rat</h2>
+                                        <p><strong>The smart one</strong></p>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -160,12 +227,12 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 mix development">
                         <div class="item">
-                            <a href="assets/images/work/2.jpg" class="work-popup">
+                            <a href="#ox">
                                 <figure class="effect-bubba">
-                                    <img src="assets/images/work/2.jpg" alt="image">
+                                    <img src="assets/images/zodiac/ox.webp" alt="image">
                                     <figcaption>
-                                        <h2>Web development</h2>
-                                        <p><strong>Client:</strong> Jonathon doe</p>
+                                        <h2>Ox</h2>
+                                        <p><strong>the born leader one</strong></p>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -175,12 +242,12 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 mix photography webdesign">
                         <div class="item">
-                            <a href="assets/images/work/3.jpg" class="work-popup">
+                            <a href="assets/images/zodiac/Tiger.webp" class="work-popup">
                                 <figure class="effect-bubba">
-                                    <img src="assets/images/work/3.jpg" alt="image">
+                                    <img src="assets/images/zodiac/Tiger.webp" alt="image">
                                     <figcaption>
-                                        <h2>Web development</h2>
-                                        <p><strong>Client:</strong> Jonathon doe</p>
+                                        <h2>Tiger</h2>
+                                        <p><strong> the power one</strong></p>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -190,12 +257,12 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 mix development">
                         <div class="item">
-                            <a href="assets/images/work/4.jpg" class="work-popup">
+                            <a href="assets/images/zodiac/Cat.webp" class="work-popup">
                                 <figure class="effect-bubba">
-                                    <img src="assets/images/work/4.jpg" alt="image">
+                                    <img src="assets/images/zodiac/Cat.webp" alt="image">
                                     <figcaption>
-                                        <h2>Web development</h2>
-                                        <p><strong>Client:</strong> Jonathon doe</p>
+                                        <h2>Cat</h2>
+                                        <p><strong> the flexible one</strong></p>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -205,12 +272,12 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 mix development webdesign">
                         <div class="item">
-                            <a href="assets/images/work/5.jpg" class="work-popup">
+                            <a href="assets/images/zodiac/dragon.webp" class="work-popup">
                                 <figure class="effect-bubba">
-                                    <img src="assets/images/work/5.jpg" alt="image">
+                                    <img src="assets/images/zodiac/dragon.webp" alt="image">
                                     <figcaption>
-                                        <h2>Web development</h2>
-                                        <p><strong>Client:</strong> Jonathon doe</p>
+                                        <h2>Dragon</h2>
+                                        <p><strong> the holy one </strong></p>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -220,12 +287,102 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 mix photography">
                         <div class="item">
-                            <a href="assets/images/work/6.jpg" class="work-popup">
+                            <a href="assets/images/zodiac/snake.webp" class="work-popup">
                                 <figure class="effect-bubba">
-                                    <img src="assets/images/work/6.jpg" alt="image">
+                                    <img src="assets/images/zodiac/snake.webp" alt="image">
                                     <figcaption>
-                                        <h2>Web development</h2>
-                                        <p><strong>Client:</strong> Jonathon doe</p>
+                                        <h2>Snake</h2>
+                                        <p><strong> the lucky one </strong></p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END SINGLE WORK DESIGN AREA -->
+                    <!-- START SINGLE WORK DESIGN AREA -->
+                    <div class="col-md-4 col-sm-6 mix development webdesign">
+                        <div class="item">
+                            <a href="assets/images/zodiac/Horse.webp" class="work-popup">
+                                <figure class="effect-bubba">
+                                    <img src="assets/images/zodiac/Horse.webp" alt="image">
+                                    <figcaption>
+                                        <h2>Horse</h2>
+                                        <p><strong> the nomadic one</strong> </p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END SINGLE WORK DESIGN AREA -->
+                    <!-- START SINGLE WORK DESIGN AREA -->
+                    <div class="col-md-4 col-sm-6 mix development webdesign">
+                        <div class="item">
+                            <a href="assets/images/zodiac/goat.webp" class="work-popup">
+                                <figure class="effect-bubba">
+                                    <img src="assets/images/zodiac/goat.webp" alt="image">
+                                    <figcaption>
+                                        <h2>Goat</h2>
+                                        <p><strong>the dreamy one</strong> </p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END SINGLE WORK DESIGN AREA -->
+                    <!-- START SINGLE WORK DESIGN AREA -->
+                    <div class="col-md-4 col-sm-6 mix development webdesign">
+                        <div class="item">
+                            <a href="assets/images/zodiac/monkey.webp" class="work-popup">
+                                <figure class="effect-bubba">
+                                    <img src="assets/images/zodiac/monkey.webp" alt="image">
+                                    <figcaption>
+                                        <h2>Monkey</h2>
+                                        <p><strong> the cheerful one</strong> </p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END SINGLE WORK DESIGN AREA -->
+                    <!-- START SINGLE WORK DESIGN AREA -->
+                    <div class="col-md-4 col-sm-6 mix development webdesign">
+                        <div class="item">
+                            <a href="assets/images/zodiac/rooster.webp" class="work-popup">
+                                <figure class="effect-bubba">
+                                    <img src="assets/images/zodiac/rooster.webp" alt="image">
+                                    <figcaption>
+                                        <h2>Rooster</h2>
+                                        <p><strong> the self-righteous one</strong></p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END SINGLE WORK DESIGN AREA -->
+                    <!-- START SINGLE WORK DESIGN AREA -->
+                    <div class="col-md-4 col-sm-6 mix development webdesign">
+                        <div class="item">
+                            <a href="assets/images/zodiac/Dog.webp" class="work-popup">
+                                <figure class="effect-bubba">
+                                    <img src="assets/images/zodiac/Dog.webp" alt="image">
+                                    <figcaption>
+                                        <h2>Dog</h2>
+                                        <p><strong> the faithful one</strong> </p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END SINGLE WORK DESIGN AREA -->
+                    <!-- START SINGLE WORK DESIGN AREA -->
+                    <div class="col-md-4 col-sm-6 mix development webdesign">
+                        <div class="item">
+                            <a href="assets/images/zodiac/Pig.webp" class="work-popup">
+                                <figure class="effect-bubba">
+                                    <img src="assets/images/zodiac/Pig.webp" alt="image">
+                                    <figcaption>
+                                        <h2>Pig</h2>
+                                        <p><strong> the optimistic one</strong> </p>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -238,91 +395,42 @@
     </section>
     <!-- / END START WORK DESIGN AREA -->
 
-
-    <!-- START COMPLETE PROJECT DESIGN AREA -->
-    <section class="complete-project-area" data-stellar-background-ratio="0.2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-project-complete">
-                        <i class="fa fa-handshake-o"></i>
-                        <h2 class="counter-num">352</h2>
-                        <h3>complete project</h3>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-project-complete">
-                        <i class="fa fa-users"></i>
-                        <h2 class="counter-num">121</h2>
-                        <h3>Happy clients</h3>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-project-complete">
-                        <i class="fa fa-coffee"></i>
-                        <h2 class="counter-num">560</h2>
-                        <h3>cup of coffie</h3>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-project-complete">
-                        <i class="fa fa-child"></i>
-                        <h2 class="counter-num">11</h2>
-                        <h3>awards</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- / END COMPLETE PROJECT DESIGN AREA -->
-
-
-    <!-- START BLOG PAGE DESIGN AREA -->
-    <section class="blog-area section-padding">
+    
+    <!-- START SINGLE ZODIAC AREA -->
+    <section id="rat" class="work section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h2>recents blogs</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                        
+                        <h2>Zodiac of Rat – the smart one</h2>
+<p>(1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008,2020, 2032)</p>
+<p>The Orient in general, has some common features. They share same animals that have dominated roles in their lives. One of them is mouse. Every where in the world, mice are considered pest to people, yet actually, it plays well its natural role as an animal in the food ring. To the land where agriculture plays the greatest role, mice are not only a kind of animal but a cultural sign. That’s why it stands at the first position of 12 zodiac signs.</p>
+<p>Respected for its smartness and quick-witted, people with rat sign is imaginative and generous, especially with people on their same boat. You are working a “rat person”? Then do not spend a moment underestimating him or her. Maybe they appear with a dove-y look, yet inside they are calculating carefully every single step to win and conquer the rival to achieve their goal.</p>
+                       
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <!-- START SINGLE BLOG DESIGN AREA -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
-                        <img src="assets/images/blog/blog1.png" alt="">
-                        <a href="#" class="blog-title">create website step by step</a>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                        <a href="" class="read-more">Read more</a>
-                    </div>
-                </div>
-                <!-- / END SINGLE BLOG DESIGN AREA -->
-                <!-- START SINGLE BLOG DESIGN AREA -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-blog wow fadeInUp" data-wow-delay="0.4s">
-                        <img src="assets/images/blog/blog2.png" alt="">
-                        <a href="#" class="blog-title">create website step by step</a>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                        <a href="" class="read-more">Read more</a>
-                    </div>
-                </div>
-                <!-- / END SINGLE BLOG DESIGN AREA -->
-                <!-- START SINGLE BLOG DESIGN AREA -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-blog wow fadeInUp" data-wow-delay="0.6s">
-                        <img src="assets/images/blog/blog3.png" alt="">
-                        <a href="#" class="blog-title">create website step by step</a>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                        <a href="" class="read-more">Read more</a>
-                    </div>
-                </div>
-                <!-- / END SINGLE BLOG DESIGN AREA -->
             </div>
         </div>
     </section>
-    <!-- / END BLOG PAGE DESIGN AREA -->
+    <!-- END SINGLE ZODIAC AREA -->
+    <!-- START SINGLE ZODIAC AREA -->
+    <section id="ox" class="work section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2>Zodiac of OX – the smart one</h2>
+<p>(1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008,2020, 2032)</p>
+<p>The Orient in general, has some common features. They share same animals that have dominated roles in their lives. One of them is mouse. Every where in the world, mice are considered pest to people, yet actually, it plays well its natural role as an animal in the food ring. To the land where agriculture plays the greatest role, mice are not only a kind of animal but a cultural sign. That’s why it stands at the first position of 12 zodiac signs.</p>
+<p>Respected for its smartness and quick-witted, people with rat sign is imaginative and generous, especially with people on their same boat. You are working a “rat person”? Then do not spend a moment underestimating him or her. Maybe they appear with a dove-y look, yet inside they are calculating carefully every single step to win and conquer the rival to achieve their goal.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END SINGLE ZODIAC AREA -->
+        </div>
+    </section>
+     <!-- END PERSONALITY AREA -->
 
     <!-- START CONTACT DESIGN AREA -->
     <section id="contact" class="contact-me-area section-padding">

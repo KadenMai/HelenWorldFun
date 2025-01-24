@@ -716,6 +716,7 @@ ul.work li.active {
 .work .item {
     padding: 0;
     margin: 0;
+    border: 5px solid #ffffff;
 }
 
 .work figure.effect-julia img {
@@ -1032,7 +1033,7 @@ a.read-more:hover {
 
 .footer-area {
     background: #0C0B0B;
-    padding: 120px 0px;
+    padding: 50px 0px;
 }
 
 .footer-area p {
