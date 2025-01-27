@@ -59,6 +59,32 @@
           font-size: 18px;
           font-weight: bold;
         }
+       
+       
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        #back-to-top:hover {
+            background-color: #0056b3;
+        }
+        #back-to-top.show {
+            display: flex;
+        }
     </style>
 
     <script>
@@ -194,6 +220,12 @@
                     <div class="section-title">
                         <h2>The Vietnam Zodiac.</h2>
                         <p>There are 12 animals in the zodiac each repesenting a year, on this page you can find out what animal you are a see how you are like.</p>
+
+                        <h1>Lunar New Year Presentation</h1>
+                        <div style="width: 100%; max-width: 800px; margin: 0 auto;">
+                        <!-- Replace the src URL with your Google Slides embed link -->
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRi2QdrQZ_bGtAZY1xM8TMIa5EfXVuTtPwzEoXXcw52Sln5zmBv4Al-Dd0z3tMrMzGI3wgQsoqMO7vx/embed?start=false&loop=true&delayms=3000" frameborder="0" width="960" height="700" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -662,6 +694,29 @@ However, if a goat person knows that dreaming is his both stronghold and weaknes
     <script src="assets/js/form-contact.js"></script>
     <!-- SCRIPT JS -->
     <script src="assets/js/scripts.js"></script>
+
+    <button id="back-to-top" title="Go to top">↑</button>
+    <script>
+        const backToTopButton = document.getElementById('back-to-top');
+    
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+          } else {
+            backToTopButton.classList.remove('show');
+          }
+        });
+    
+        // Scroll back to top when clicked
+        backToTopButton.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      </script>
+  
 </body>
 
 </html>
